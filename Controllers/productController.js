@@ -1,5 +1,6 @@
 import Product from '../models/Products.js';
 
+// Create a product
 export const createProduct = async (req, res) => {
     try {
         const product = await Product.create(req.body);
@@ -8,7 +9,8 @@ export const createProduct = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
- 
+
+// Get all products
 export const getAllProduct = async (req, res) => {
   try {
     const getProductDetail = await Product.find();
@@ -18,6 +20,7 @@ export const getAllProduct = async (req, res) => {
   }
 };
 
+// Update a product
 export const updateProduct = async (req, res) => { 
   try {
     const productId = req.params.id;
@@ -39,6 +42,7 @@ export const updateProduct = async (req, res) => {
   }
 }
 
+// Delete a product
 export const deleteProduct = async (req, res) => { 
   try {
     const productId = req.params.id;
