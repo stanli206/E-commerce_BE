@@ -36,16 +36,17 @@ export const addToCart = async (req, res) => {
 
 // View Cart
 export const viewCart = async (req, res) => {
-    try {
-        const cart = await Cart.findOne({ user: req.user._id }).populate("items.product");
-        if(!cart) {
-            return res.status(404).json({ message: "Cart is empty" });
-        }
-        res.status(200).json({message: "Cart fetched successfully", data: cart});
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+  try {
+    const cart = await Cart.findOne({ user: req.user._id }).populate("items.product");
+    
+    if (!cart) {
+      return res.status(200).json({ message: "Cart is empty", data: { items: [] } });
     }
-}
+    res.status(200).json({ message: "Cart retrieved", data: cart });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
  
 // Remove from Cart
 export const removeFromCart = async (req, res) => {
