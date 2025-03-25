@@ -6,9 +6,12 @@ import productRoutes from './Routers/productRoutes.js';
 import cartRoutes from './Routers/cartRoutes.js';
 import orderRoutes from './Routers/orderRoutes.js';
 import paymentRoutes from './Routers/paymentRoutes.js';
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
