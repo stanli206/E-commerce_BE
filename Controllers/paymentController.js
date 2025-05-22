@@ -29,7 +29,7 @@ export const createCheckoutSession = async (req, res) => {
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: "https://onlineekart.netlify.app/Success",
+      success_url: "https://onlineekart.netlify.app/success",
       cancel_url: "https://onlineekart.netlify.app/cancel",
     });
 
