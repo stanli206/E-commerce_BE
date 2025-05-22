@@ -23,7 +23,7 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

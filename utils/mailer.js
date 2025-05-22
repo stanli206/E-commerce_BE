@@ -3,7 +3,7 @@ import { transporter } from '../Config/emailConfig.js';
 const sendEmail = async (to, subject, text) => { 
     try {
         const mailOptions = {
-            from: process.env.EMAIL_USER,
+            from: process.env.EMAIL,
             to,
             subject,
             text,
